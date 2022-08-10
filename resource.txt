@@ -1,8 +1,0 @@
-Frame/Library
-1. React
-2. Bootstrap 5
-3. Tachyons
-
-APIs
-https://robohash.org
-https://jsonplaceholder.typicode.com
