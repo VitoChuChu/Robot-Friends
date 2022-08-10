@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Cardlist from "../components/CardList";
-import SearchBox from "../components/SearchBox";
+import Nav from "../components/Nav";
 import Scroll from "../components/Scroll";
 
 const App = () => {
   const [search, setSearch] = useState("");
   const [robots, setRobots] = useState([]);
 
+  // userEffect area
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchUser();
@@ -25,21 +26,23 @@ const App = () => {
   });
 
   if (robots.length === 0) {
-    return <h1 className="tc">Loading</h1>;
+    return <h1 className="tc v-mid">Loading</h1>;
   } else {
-    return (
-      <div className="container text-center">
-        <div>
-          <h1>Robot Friends</h1>
-          <SearchBox search={search} setSearch={setSearch} />
+    try {
+      return (
+        <div className="container.xl text-center">
+          <Nav search={search} setSearch={setSearch} />
+          <div>
+            <Scroll>
+              <Cardlist robots={filterRobots} />
+            </Scroll>
+          </div>
         </div>
-        <div>
-          <Scroll>
-            <Cardlist robots={filterRobots} />
-          </Scroll>
-        </div>
-      </div>
-    );
+      );
+    } catch (e) {
+      console.log(e);
+      return <h1>Oops, something happened.</h1>;
+    }
   }
 };
 
