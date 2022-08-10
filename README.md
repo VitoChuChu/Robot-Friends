@@ -1,7 +1,6 @@
 # Hello!! Welcome to Robot Friends!
 
 This is a website that you can find a robot friend!!  
-(The site is still on working...)
 
 ## How to use : 
 1. Clone or Fork the code.
