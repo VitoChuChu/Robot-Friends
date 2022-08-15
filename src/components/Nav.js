@@ -4,7 +4,7 @@ import SearchBox from "./SearchBox";
 const Nav = ({ search, setSearch }) => {
   return (
     <div>
-      <h1 className="fw-bolder" style={{ fontSize: "4rem" }}>
+      <h1 className="fw-bolder" style={{ fontSize: "3rem" }}>
         Robot Friends
       </h1>
       <SearchBox search={search} setSearch={setSearch} />
