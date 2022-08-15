@@ -6,4 +6,5 @@ body {
   margin: 0;
   font-family: "Play", sans-serif;
   background: linear-gradient(to right, rgb(248, 248, 255), rgb(0, 0, 93));
+  overflow: hidden;
 }

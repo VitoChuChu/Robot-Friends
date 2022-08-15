@@ -6,7 +6,6 @@ import Scroll from "../components/Scroll";
 const App = () => {
   const [search, setSearch] = useState("");
   const [robots, setRobots] = useState([]);
-
   // userEffect area
   useEffect(() => {
     const fetchData = async () => {
