@@ -6,19 +6,12 @@ import Scroll from "../components/Scroll";
 const App = () => {
   const [search, setSearch] = useState("");
   const [robots, setRobots] = useState([]);
-  // userEffect area
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchUser();
-    };
-    fetchData();
-  }, []);
 
-  const fetchUser = () => {
-    return fetch("https://jsonplaceholder.typicode.com/users")
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => setRobots(users));
-  };
+  }, []);
 
   const filterRobots = robots.filter((robot) => {
     return robot.name.toLowerCase().includes(search.toLowerCase());
